@@ -1,0 +1,63 @@
+<!-- <form #Login="ngForms" (ngSubmit)="Login"> -->
+<section><form #loginForm="ngForm" (nglogin)="savePerson(loginForm)" ></form>
+    <div class="p-5">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 bg-light login">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="text-center p-5"><strong>Signin</strong></h1>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+
+                                <div class="center-content"></div>
+                                <mat-card></mat-card>
+                                <form>
+                                    <div>
+                                        <mat-form-field>
+                                            <mat-label>Username</mat-label>
+                                            <input matInput type="text" required placeholder="admin" id="user"
+                                                name="user1" [(ngModel)]="username" #name1="ngModel" >
+                                            </mat-form-field>
+                                            <div *ngIf="name1.invalid && (name1.dirty || name1.touched)"
+                                            class="text-danger ">
+        
+                                            <div *ngIf="name1.errors?.['required']">
+                                                username is required.
+                                            </div>
+                                        </div>
+                
+                                        
+                                    </div>
+                                    <mat-form-field>
+                                        <mat-label>Password</mat-label>
+                                        <input matInput type="text" required placeholder="password" id="pass1" name="pass"
+                                            [(ngModel)]="password" #name2="ngModel">
+                                        </mat-form-field>
+                                        <div *ngIf="name2.invalid && (name2.dirty || name2.touched)"
+                                            class="text-danger ">
+        
+                                            <div *ngIf="name2.errors?.['required']">
+                                                password is required.
+                                            </div>
+                                        </div>
+                                           
+                                    
+                                    <div>
+                                        <button (click)="onclick()" class=" submit">Login</button>
+                                    </div>
+
+
+
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
